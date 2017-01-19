@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script type="text/javascript">
+  var salarioMensal = 3000;
+
+  if(ehEstagiario || ehCLT){
+
+    if (salarioMensal > 0 && salarioMensal < 1000) {
+      console.log("Salário menor que 1000");
+      var bonus = (salarioMensal*0.05);
+    } else if (salarioMensal < 2000) {
+      console.log("Salário menor que 2000");
+      var bonus = (salarioMensal*0.10);
+    } else {
+      console.log("Salário maior que 2000");
+      var bonus = (salarioMensal*0.15);
+    }
+    console.log(bonus);
+  }
+  </script>
+</head>
+<body>
+
+</body>
+</html>
