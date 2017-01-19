@@ -3,7 +3,7 @@ var trsPacientes = document.getElementsByClassName("paciente");
 
 var posicaoAtual = 0;
 
-while(posicaoAtual < trsPacientes.length) {
+for(var posicaoAtual; posicaoAtual < trsPacientes.length; posicaoAtual++) {
 
   var pacienteTr = trsPacientes[posicaoAtual];
 
@@ -23,5 +23,4 @@ while(posicaoAtual < trsPacientes.length) {
   } else {
     console.log("Não executei porque altura é igual a zero");
   }
-  posicaoAtual++;
 }
