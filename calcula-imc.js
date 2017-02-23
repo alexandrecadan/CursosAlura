@@ -1,29 +1,35 @@
-var trsPacientes = document.getElementsByClassName("paciente");
 
-percorreArray(trsPacientes, function(pacienteTr) {
+  var botao = document.getElementById("calcula-imcs");
+  botao.addEventListener("click", function(){
 
-  var tdNome = pacienteTr.getElementsByClassName("info-nome")[0];
-  var tdPeso = pacienteTr.getElementsByClassName("info-peso")[0];
-  var tdAltura = pacienteTr.getElementsByClassName("info-altura")[0];
-  
-  var pacienteAtual = {nome: tdNome.textContent, 
-                       peso: tdPeso.textContent, 
-                       altura: tdAltura.textContent, 
-                       pegaImc: function() {
+  var trsPacientes = document.getElementsByClassName("paciente");
 
-                        if(this.altura != 0) {
-                          var imc = this.peso / (this.altura * this.altura);
-                          return imc;
-                            } else {
-                          console.log("Não executei porque altura é igual a zero");
-                        }
-                      }};
+  percorreArray(trsPacientes, function(pacienteTr) {
 
-  var imc = pacienteAtual.pegaImc();
+    var tdNome = pacienteTr.getElementsByClassName("info-nome")[0];
+    var tdPeso = pacienteTr.getElementsByClassName("info-peso")[0];
+    var tdAltura = pacienteTr.getElementsByClassName("info-altura")[0];
+    
+    var pacienteAtual = {nome: tdNome.textContent, 
+                         peso: tdPeso.textContent, 
+                         altura: tdAltura.textContent, 
+                         pegaImc: function() {
 
-  var tdImc = pacienteTr.getElementsByClassName("info-imc")[0];      
-  tdImc.textContent = imc;
+                          if(this.altura != 0) {
+                            var imc = this.peso / (this.altura * this.altura);
+                            return imc;
+                              } else {
+                            console.log("Não executei porque altura é igual a zero");
+                          }
+                        }};
 
-  console.log(imc);
+    var imc = pacienteAtual.pegaImc();
 
-});
+    var tdImc = pacienteTr.getElementsByClassName("info-imc")[0];      
+    tdImc.textContent = imc;
+
+    console.log(imc);
+
+    });
+
+  });
